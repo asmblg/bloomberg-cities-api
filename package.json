@@ -7,6 +7,10 @@
     "node": "18.0.0",
     "npm": "8.6.0"
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/asmblg/bloomberg-cities-api.git"
