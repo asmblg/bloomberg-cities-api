@@ -9,9 +9,9 @@ const configSchema = new Schema(
     manifest: { type: Object, required: true },
     map: { type: Object, required: false }
   },
-  { collection: 'config' }
+  { collection: 'configs' }
 );
 
-const config = mongoose.model('config', configSchema);
+const config = mongoose.model('configs', configSchema);
 
 module.exports = config;
