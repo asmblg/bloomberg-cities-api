@@ -1,4 +1,5 @@
 module.exports = {
   data: require('./data'),
-  config: require('./config')
+  config: require('./config'),
+  geo: require('./geo')
 }

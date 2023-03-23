@@ -1,4 +1,5 @@
 module.exports = {
   dataController: require('./dataController'),
-  configController: require('./configController')
+  configController: require('./configController'),
+  geoController: require('./geoController')
 }

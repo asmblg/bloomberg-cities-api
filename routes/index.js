@@ -2,9 +2,11 @@ const path = require('path');
 const router = require('express').Router();
 const dataRoutes = require('./data');
 const configRoutes = require('./config');
+const geoRoutes = require('./geo')
 
 router.use('/data', dataRoutes);
 router.use('/config', configRoutes);
+router.use('/geo', geoRoutes);
 
 router.use((err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
