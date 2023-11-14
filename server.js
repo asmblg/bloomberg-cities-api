@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 const app = express();
 const cors = require('cors');
+const morgan = require('morgan');
 const PORT = process.env.PORT || 3001;
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -12,6 +13,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+// app.use(morgan('tiny'));
 app.use(cors());
 app.use(routes);
 
@@ -21,7 +23,7 @@ mongoose
   })
   .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
-    console.log('Connected to', MONGODB_URI ? 'Production DB' : 'Dev DB');
+    console.log('Connected to', MONGODB_URI || 'Dev DB');
     app.listen(PORT, function () {
       console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
     });
