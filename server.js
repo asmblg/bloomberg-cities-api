@@ -21,7 +21,12 @@ mongoose
   .set({
     strictQuery: false
   })
-  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
+  .connect(MONGODB_URI, 
+    { 
+      useNewUrlParser: true, 
+      useUnifiedTopology: true,
+      readPreference: 'nearest'
+    })
   .then(() => {
     console.log('Connected to', MONGODB_URI || 'Dev DB');
     app.listen(PORT, function () {
@@ -31,6 +36,15 @@ mongoose
   .catch(err => {
     console.log('DB Connection ERROR: ', err);
   });
+
+  // Middleware to log the database connection details
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose connected to', MONGODB_URI);
+});
+
+mongoose.connection.on('disconnected', () => {
+  console.log('Mongoose disconnected');
+});
 
 
 
