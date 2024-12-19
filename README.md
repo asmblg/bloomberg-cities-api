@@ -13,6 +13,11 @@ cd bloomberg-cities-api
 npm install
 ```
 
+## Environment Variable
+```env
+MONGODB_URI=mongodb+srv://username:password@dbconnection/dbname
+```
+
 ## Usage
 To start the server, run:
 
