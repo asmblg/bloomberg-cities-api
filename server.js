@@ -13,7 +13,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-// app.use(morgan('tiny'));
+app.use(morgan('tiny'));
 app.use(cors());
 app.use(routes);
 
